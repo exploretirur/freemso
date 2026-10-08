@@ -214,8 +214,8 @@
 
   /* filled state */
   .field input:not(:placeholder-shown){background:#FFFFFF;}
-  .field select:invalid{color:#9AA8C6;}
-  .field select:valid{color:var(--ink);}
+  .field select{color:var(--ink);}
+  .field select:has(option[value=""]:checked){color:#9AA8C6;}
   .field select option{color:var(--ink);}
 
   /* invalid state */
@@ -446,7 +446,7 @@
       <div class="hero-copy reveal">
         <span class="hero-badge"><span class="dot"></span>Enrolments open &middot; Limited seats</span>
         <h1>Master MS Office with <span class="accent-word">AI</span>, absolutely free for 30 days</h1>
-        <p class="lede">Learn Word, Excel & PowerPoint the smart way — with AI-powered tools that help you work faster, create better documents and deliver professional presentations.</p>
+        <p class="lede">Learn Word, Excel, PowerPoint and Outlook the smart way — guided by AI tools that help you work faster, present better and get job-ready in a month.</p>
         <div class="hero-cta-row">
           <a href="#enquiry" class="btn btn-accent">Book My Seat</a>
           <span class="hint">No fee &middot; Certificate on completion</span>
@@ -629,8 +629,8 @@
             <path d="M24 40 L45 50 L66 40 L45 30 Z" fill="#fff" opacity="0.25"/>
             <path d="M24 44 L45 54 L66 44 L66 48 L45 58 L24 48 Z" fill="#fff" opacity="0.7"/>
           </svg>
-          <h4> AI tools</h4>
-          <p>Explore AI-powered tools for content creation, research, productivity, automation, presentations, design, and smarter everyday work..</p>
+          <h4>Outlook &amp; AI tools</h4>
+          <p>Email etiquette, scheduling, and everyday AI productivity add-ons.</p>
         </div>
       </div>
 
@@ -674,21 +674,8 @@
                 <span class="err">Please enter your full name</span>
               </div>
 
-              <div class="field full" data-field="guardian">
-                <label for="guardian">C/o &middot; S/o &middot; D/o<span class="optional-tag">(optional)</span></label>
-                <div class="input-3d">
-                  <svg class="field-icon" viewBox="0 0 28 28">
-                    <path d="M14 4 L22 8 L14 12 L6 8 Z" fill="#EE8163"/>
-                    <path d="M6 8 L14 12 L14 17 L6 13 Z" fill="#D24726"/>
-                    <path d="M22 8 L14 12 L14 17 L22 13 Z" fill="#A8341A"/>
-                    <path d="M6 18 q8 -4 16 0 l0 4 q-8 -4 -16 0 Z" fill="#EE8163"/>
-                  </svg>
-                  <input type="text" id="guardian" name="guardian" placeholder="Father's / Guardian's name">
-                </div>
-              </div>
-
               <div class="field full" data-field="address">
-                <label for="address">Address<span class="optional-tag">(optional)</span></label>
+                <label for="address">Address</label>
                 <div class="input-3d">
                   <svg class="field-icon" viewBox="0 0 28 28">
                     <path d="M14 4 L24 10 L14 16 L4 10 Z" fill="#7A9BEC"/>
@@ -700,7 +687,7 @@
                 </div>
               </div>
 
-              <div class="field" data-field="place">
+              <div class="field full" data-field="place">
                 <label for="place">Place<span class="req">*</span></label>
                 <div class="input-3d">
                   <svg class="field-icon" viewBox="0 0 28 28">
@@ -709,34 +696,9 @@
                     <path d="M14 3 a7 7 0 0 1 7 7 c0 5 -7 12 -7 12 Z" fill="#D4590F" opacity="0.55"/>
                     <circle cx="14" cy="10" r="3" fill="#fff"/>
                   </svg>
-                  <select id="place" name="place" required>
-                    <option value="" disabled selected>Select your place</option>
-                    <option value="Tirur">Tirur</option>
-                    <option value="Tanur">Tanur</option>
-                    <option value="Parappanangadi">Parappanangadi</option>
-                    <option value="Kottakkal">Kottakkal</option>
-                    <option value="Kuttipuram">Kuttipuram</option>
-                  </select>
-                  <svg class="select-chevron" viewBox="0 0 24 24">
-                    <path d="M5 9 L12 5 L19 9 L12 13 Z" fill="#B9C6E2"/>
-                    <path d="M5 9 L12 13 L12 16 L5 12 Z" fill="#9AABCE"/>
-                    <path d="M19 9 L12 13 L12 16 L19 12 Z" fill="#8093BB"/>
-                  </svg>
+                  <input type="text" id="place" name="place" placeholder="Your place" required>
                 </div>
-                <span class="err">Please select your place</span>
-              </div>
-
-              <div class="field" data-field="district">
-                <label for="district">District<span class="optional-tag">(optional)</span></label>
-                <div class="input-3d">
-                  <svg class="field-icon" viewBox="0 0 28 28">
-                    <path d="M14 4 L24 10 L14 16 L4 10 Z" fill="#6FC1EE"/>
-                    <path d="M4 10 L14 16 L14 24 L4 18 Z" fill="#3AA0E0"/>
-                    <path d="M24 10 L14 16 L14 24 L24 18 Z" fill="#2079B4"/>
-                    <path d="M14 12 l3 5 h-6 Z" fill="#fff" opacity="0.7"/>
-                  </svg>
-                  <input type="text" id="district" name="district" placeholder="e.g. Malappuram">
-                </div>
+                <span class="err">Please enter your place</span>
               </div>
 
               <div class="field" data-field="mobile">
@@ -755,7 +717,7 @@
               </div>
 
               <div class="field full" data-field="email">
-                <label for="email">Email address<span class="optional-tag">(optional)</span></label>
+                <label for="email">Email address</label>
                 <div class="input-3d">
                   <svg class="field-icon" viewBox="0 0 28 28">
                     <path d="M4 9 L14 4 L24 9 L14 14 Z" fill="#6FC1EE"/>
@@ -769,7 +731,7 @@
               </div>
 
               <div class="field full" data-field="qualification">
-                <label for="qualification">Qualification<span class="req">*</span></label>
+                <label for="qualification">Qualification</label>
                 <div class="input-3d">
                   <svg class="field-icon" viewBox="0 0 28 28">
                     <path d="M14 5 L25 11 L14 17 L3 11 Z" fill="#5B85E8"/>
@@ -779,8 +741,8 @@
                     <path d="M25 11 L25 18" stroke="#FF8A3D" stroke-width="1.6" stroke-linecap="round"/>
                     <circle cx="25" cy="19.5" r="2" fill="#FF8A3D"/>
                   </svg>
-                  <select id="qualification" name="qualification" required>
-                    <option value="" disabled selected>Select your qualification</option>
+                  <select id="qualification" name="qualification">
+                    <option value="" selected>Select your qualification</option>
                     <option value="SSLC">SSLC</option>
                     <option value="Plus Two">Plus Two</option>
                     <option value="Degree">Degree</option>
@@ -793,12 +755,11 @@
                     <path d="M19 9 L12 13 L12 16 L19 12 Z" fill="#8093BB"/>
                   </svg>
                 </div>
-                <span class="err">Please select your qualification</span>
               </div>
 
               <div class="conditional-fields" id="conditionalFields">
                 <div class="field" data-field="courseGroup">
-                  <label for="courseGroup">Group / Course<span class="req">*</span></label>
+                  <label for="courseGroup">Group / Course</label>
                   <div class="input-3d">
                     <svg class="field-icon" viewBox="0 0 28 28">
                       <path d="M14 4 L24 9 L14 14 L4 9 Z" fill="#48B57E"/>
@@ -812,7 +773,7 @@
                   <span class="err">Please enter your group or course</span>
                 </div>
                 <div class="field" data-field="institution">
-                  <label for="institution">School / College name<span class="req">*</span></label>
+                  <label for="institution">School / College name</label>
                   <div class="input-3d">
                     <svg class="field-icon" viewBox="0 0 28 28">
                       <path d="M14 3 L25 8 L14 13 L3 8 Z" fill="#EE8163"/>
@@ -1042,7 +1003,7 @@
        4. Open this page over http(s), not by double-clicking the file
        5. In the browser console here, run:  testSheetConnection()
      ============================================================ */
-  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbyUrU9nnsTFYZA8G2jpFMLrOlMJjrv7dRDx2yRUq9SpZQxGNkIblyQjv9RkrSXDS6Ddmg/exec";   // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwAYQUwaT7UR3VeN7Z_3HBO0R8_SoDP5tojombZ0joWy34hWRKKabZu6VJb9h5fQQ0X/exec";   // e.g. "https://script.google.com/macros/s/AKfy.../exec"
 
   // Your WhatsApp Business number, in international format with no + or spaces.
   const WHATSAPP_NUMBER = "919539644222";
@@ -1087,19 +1048,12 @@
     let ok = true, firstBad = null;
     const v = id => document.getElementById(id).value.trim();
 
-    // required: name, place, mobile, qualification
+    // required: name, place, mobile  (everything else is optional)
     const checks = [
       ['fname',  () => v('fname').length >= 2,                'Please enter your full name'],
-      ['place',  () => v('place').length >= 2,                'Please enter your place'],
-      ['mobile', () => /^[6-9]\d{9}$/.test(v('mobile')),      'Enter a valid 10-digit mobile number'],
-      ['qualification', () => v('qualification') !== '',      'Please select your qualification']
+      ['place',  () => v('place') !== '',                     'Please enter your place'],
+      ['mobile', () => /^[6-9]\d{9}$/.test(v('mobile')),      'Enter a valid 10-digit mobile number']
     ];
-
-    // conditional required when qualification is not SSLC
-    if (v('qualification') && v('qualification') !== 'SSLC') {
-      checks.push(['courseGroup', () => v('courseGroup').length >= 2, 'Please enter your group or course']);
-      checks.push(['institution', () => v('institution').length >= 2, 'Please enter your school or college']);
-    }
 
     checks.forEach(([id, test, msg]) => {
       const el = document.getElementById(id);
@@ -1149,7 +1103,7 @@
   window.downloadEnquiriesCSV = function(){
     const all = JSON.parse(localStorage.getItem('enquiries') || '[]');
     if(!all.length){ alert('No enquiries stored on this device yet.'); return; }
-    const cols = ['enquiryId','timestamp','name','guardian','address','place','district','mobile','email','qualification','courseGroup','institution'];
+    const cols = ['enquiryId','timestamp','name','address','place','mobile','email','qualification','courseGroup','institution'];
     const esc = s => `"${String(s ?? '').replace(/"/g,'""')}"`;
     const csv = [cols.join(',')].concat(all.map(r => cols.map(c => esc(r[c])).join(','))).join('\n');
     const url = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
@@ -1229,10 +1183,8 @@
       enquiryId: generateEnquiryId(),
       timestamp: new Date().toLocaleString('en-IN'),
       name: document.getElementById('fname').value.trim(),
-      guardian: document.getElementById('guardian').value.trim(),
       address: document.getElementById('address').value.trim(),
       place: document.getElementById('place').value.trim(),
-      district: document.getElementById('district').value.trim(),
       mobile: document.getElementById('mobile').value.trim(),
       email: document.getElementById('email').value.trim(),
       qualification: qualification.value,
